@@ -1,0 +1,56 @@
+kind: Object
+name: IMGroupPhotoTransfer
+children:
+  IMFileTransferGUID:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The GUID of the file transfer for this group photo.
+      annotations:
+        ericrabil.com/readable-name: guid
+        ericrabil.com/type-group: IMGroupPhotoTransfer
+  IMFileTransferMessageGUID:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The GUID of the message changing the group photo.
+      annotations:
+        ericrabil.com/readable-name: messageGUID
+        ericrabil.com/type-group: IMGroupPhotoTransfer
+        ericrabil.com/value-nullable: 'true'
+  IMFileTransferLocalUserInfoKey:
+    kind: Reference
+    name: IMGroupPhotoTransferUserInfo
+    metadata:
+      description: The user info for the photo being transferred.
+      annotations:
+        ericrabil.com/readable-name: localUserInfo
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/type-group: IMGroupPhotoTransfer
+    aliasedName: IMGroupPhotoTransferUserInfo
+    aliasedKind: Object
+  IMFileTransferCreatedDate:
+    kind: Primitive
+    type: Double
+    metadata:
+      description: The time the group photo change was initiated.
+      annotations:
+        ericrabil.com/readable-name: createdDate
+        ericrabil.com/type-group: IMGroupPhotoTransfer
+  IMFileTransferUTITypeKey:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The UTI type of the group photo.
+      annotations:
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/readable-name: utiType
+        ericrabil.com/type-group: IMGroupPhotoTransfer
+  IMFileTransferFilenameKey:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The name of the group photo being transferred.
+      annotations:
+        ericrabil.com/readable-name: filename
+        ericrabil.com/type-group: IMGroupPhotoTransfer

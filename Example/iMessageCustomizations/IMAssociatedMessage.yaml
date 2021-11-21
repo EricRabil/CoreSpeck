@@ -1,0 +1,70 @@
+kind: Customization
+name: IMAssociatedMessageWireAnnotations
+target:
+  children: |
+    amk:
+      kind: Primitive
+      type: String
+patches:
+  - op: add
+    path: /children/amk/metadata
+    value:
+      annotations:
+        ericrabil.com/type-group: IMMessageAssociation
+        ericrabil.com/readable-name: associatedMessageGUID
+      description: The GUID of the message this message is associated with.
+  - op: add
+    path: /children/amt/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: associatedMessageType
+        ericrabil.com/type-group: IMMessageAssociation
+        ericrabil.com/open-enumeration: |
+          kind: Integer
+          name: IMMessageAssociationType
+          cases:
+            unspecified: 0
+            edit: 1
+            unconsumed: 2
+            consumed: 4
+            sticker: 1000
+            heart: 2000
+            thumbsUp: 2001
+            thumbsDown: 2002
+            ha: 2003
+            exclamation: 2004
+            questionMark: 2005
+            deselectedHeart: 3000
+            deselectedThumbsUp: 3001
+            deselectedThumbsDown: 3002
+            deselectedHa: 3003
+            deselectedExclamation: 3004
+            deselectedQuestionMark: 3005
+      description: The type of associated message being sent.
+  - op: add
+    path: /children/amrlc/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: associatedMessageLowerBound
+        ericrabil.com/type-group: IMMessageAssociation
+      description: In a rich message, the first character (as in an attributed string) that is part of the association.
+  - op: add
+    path: /children/amrln/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: associatedMessageUpperBound
+        ericrabil.com/type-group: IMMessageAssociation
+      description: In a rich message, the last character (as in an attributed string) that is part of the association.
+  - op: add
+    path: /children/messageAssociation
+    value:
+      kind: Reference
+      name: messageAssociation
+      aliasedName: IMMessageAssociation
+      aliasedKind: Object
+      metadata:
+        annotations:
+          ericrabil.com/type-group: IMMessage
+          ericrabil.com/synthesized-aggregate: IMMessageAssociation
+          ericrabil.com/value-nullable: true
+        description: If present, identifies the message this message should be correlated to.

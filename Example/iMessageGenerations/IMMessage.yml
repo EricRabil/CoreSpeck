@@ -1,0 +1,89 @@
+kind: Object
+name: IMMessage
+children:
+  messageAssociation:
+    kind: Reference
+    name: messageAssociation
+    metadata:
+      description: If present, identifies the message this message should be correlated
+        to.
+      annotations:
+        ericrabil.com/synthesized-aggregate: IMMessageAssociation
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: 'true'
+    aliasedName: IMMessageAssociation
+    aliasedKind: Object
+  p:
+    kind: Array
+    metadata:
+      description: The participants this message has been sent to.
+      annotations:
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/readable-name: participants
+    element:
+      kind: Primitive
+      type: String
+  x:
+    kind: Primitive
+    type: String
+    metadata:
+      description: HTML-based rich text for this message
+      annotations:
+        ericrabil.com/readable-name: richContent
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/type-group: IMMessage
+  msi:
+    kind: Primitive
+    type: Data
+    metadata:
+      description: A binary property list with additional information about this message.
+      annotations:
+        ericrabil.com/readable-name: messageSummaryInfo
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/type-group: IMMessage
+  t:
+    kind: Primitive
+    type: String
+    metadata:
+      description: Human-readable message text, can be used as a fallback text or
+        the default if no other message formats are provided.
+      annotations:
+        ericrabil.com/readable-name: textContent
+        ericrabil.com/type-group: IMMessage
+  tg:
+    kind: Primitive
+    type: String
+    metadata:
+      description: When present, this message is in reply to another message.
+      annotations:
+        ericrabil.com/readable-name: threadIdentifier
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: 'true'
+  v:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The base protocol version, which should always be 1.
+      annotations:
+        ericrabil.com/readable-name: protocolVersion
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/require-constant: '1'
+  pluginMessage:
+    kind: Reference
+    name: pluginMessage
+    metadata:
+      description: If present, provides the plugin payload.
+      annotations:
+        ericrabil.com/synthesized-aggregate: IMPluginMessage
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: 'true'
+    aliasedName: IMPluginMessage
+    aliasedKind: Object
+  r:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The GUID of the message prior to this one
+      annotations:
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/readable-name: replyToGUID

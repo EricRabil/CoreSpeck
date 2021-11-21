@@ -1,0 +1,30 @@
+kind: Object
+name: A32022FE-134B-42AD-B7FC-1E2FD31D4183.plist
+metadata:
+  hash: e5bd48ae4d08a2a82a41b8a2617faca8
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/A32022FE-134B-42AD-B7FC-1E2FD31D4183.plist
+children:
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  t:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  gv:
+    kind: Primitive
+    type: String
+  r:
+    kind: Primitive
+    type: String
+  pv:
+    kind: Primitive
+    type: Integer
+  v:
+    kind: Primitive
+    type: String

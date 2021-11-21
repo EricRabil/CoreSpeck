@@ -1,0 +1,54 @@
+kind: Object
+name: IMGroupMessage
+children:
+  sp:
+    kind: Array
+    metadata:
+      description: The participants this group change was sent to.
+      annotations:
+        ericrabil.com/readable-name: senderParticipants
+        ericrabil.com/type-group: IMGroupMessage
+    element:
+      kind: Primitive
+      type: String
+  tv:
+    kind: Reference
+    name: IMGroupPhotoTransfer
+    metadata:
+      description: A file transfer for the new group photo.
+      annotations:
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/readable-name: groupPhotoTransfer
+        ericrabil.com/type-group: IMGroupMessage
+    aliasedName: IMGroupPhotoTransfer
+    aliasedKind: Object
+  nn:
+    kind: Primitive
+    type: String
+    metadata:
+      description: When present, the group should now be named this value.
+      annotations:
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/readable-name: newGroupName
+        ericrabil.com/type-group: IMGroupMessage
+  type:
+    kind: Reference
+    name: IMGroupMessageUpdateType
+    metadata:
+      description: The type of change being made. One of (n,p,v)
+      annotations:
+        ericrabil.com/readable-name: groupUpdateType
+        ericrabil.com/type-group: IMGroupMessage
+    aliasedName: IMGroupMessageUpdateType
+    aliasedKind: Enumeration
+  tp:
+    kind: Array
+    metadata:
+      description: When present, the group now has the participants within this value.
+      annotations:
+        ericrabil.com/value-nullable: 'true'
+        ericrabil.com/type-group: IMGroupMessage
+        ericrabil.com/readable-name: toParticipants
+    element:
+      kind: Primitive
+      type: String

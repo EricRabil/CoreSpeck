@@ -1,0 +1,39 @@
+kind: Object
+name: IMMessageAssociation
+children:
+  amrln:
+    kind: Primitive
+    type: Integer
+    metadata:
+      description: In a rich message, the last character (as in an attributed string)
+        that is part of the association.
+      annotations:
+        ericrabil.com/type-group: IMMessageAssociation
+        ericrabil.com/readable-name: associatedMessageUpperBound
+  amrlc:
+    kind: Primitive
+    type: Integer
+    metadata:
+      description: In a rich message, the first character (as in an attributed string)
+        that is part of the association.
+      annotations:
+        ericrabil.com/type-group: IMMessageAssociation
+        ericrabil.com/readable-name: associatedMessageLowerBound
+  amt:
+    kind: Reference
+    name: IMMessageAssociationType
+    metadata:
+      description: The type of associated message being sent.
+      annotations:
+        ericrabil.com/readable-name: associatedMessageType
+        ericrabil.com/type-group: IMMessageAssociation
+    aliasedName: IMMessageAssociationType
+    aliasedKind: Enumeration
+  amk:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The GUID of the message this message is associated with.
+      annotations:
+        ericrabil.com/type-group: IMMessageAssociation
+        ericrabil.com/readable-name: associatedMessageGUID

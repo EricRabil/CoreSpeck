@@ -1,0 +1,36 @@
+kind: Object
+name: CD2012EE-AC5B-4274-BB78-906BA2F444FB.plist
+metadata:
+  hash: 78c49bf5fdf6384d8efa6a671d7dac1d
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/CD2012EE-AC5B-4274-BB78-906BA2F444FB.plist
+children:
+  pv:
+    kind: Primitive
+    type: Integer
+  r:
+    kind: Primitive
+    type: String
+  t:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  tg:
+    kind: Primitive
+    type: String
+  gv:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  pRID:
+    kind: Primitive
+    type: String

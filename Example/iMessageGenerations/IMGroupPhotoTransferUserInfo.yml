@@ -1,0 +1,51 @@
+kind: Object
+name: IMGroupPhotoTransferUserInfo
+children:
+  mmcs-owner:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The identifier of the sender of this transfer.
+      annotations:
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo
+        ericrabil.com/readable-name: owner
+  refresh-date:
+    kind: Primitive
+    type: Date
+    metadata:
+      description: The date on which this transfer will need to be refreshed.
+      annotations:
+        ericrabil.com/readable-name: refreshDate
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo
+  file-size:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The size in bytes of this transfer.
+      annotations:
+        ericrabil.com/readable-name: fileSize
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo
+  mmcs-signature-hex:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The signature sent by the sender of this transfer.
+      annotations:
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo
+        ericrabil.com/readable-name: signatureHex
+  decryption-key:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The key to be used when decrypting this transfer.
+      annotations:
+        ericrabil.com/readable-name: decryptionKey
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo
+  mmcs-url:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The URL at which this transfer can be downloaded.
+      annotations:
+        ericrabil.com/readable-name: url
+        ericrabil.com/type-group: IMGroupPhotoTransferUserInfo

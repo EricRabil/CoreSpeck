@@ -1,0 +1,24 @@
+kind: Object
+name: 73DFFFA9-1D35-4614-AA63-D16BDADD0D24.plist
+metadata:
+  hash: 92b502aba0dfdc35ef7fd9016accd236
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/73DFFFA9-1D35-4614-AA63-D16BDADD0D24.plist
+children:
+  pv:
+    kind: Primitive
+    type: Integer
+  gv:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String

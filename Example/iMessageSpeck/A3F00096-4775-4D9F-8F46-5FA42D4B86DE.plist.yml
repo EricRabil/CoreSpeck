@@ -1,0 +1,36 @@
+kind: Object
+name: A3F00096-4775-4D9F-8F46-5FA42D4B86DE.plist
+metadata:
+  hash: e7e8191b4f24da573a08d03bde8cdce3
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/A3F00096-4775-4D9F-8F46-5FA42D4B86DE.plist
+children:
+  r:
+    kind: Primitive
+    type: String
+  CloudKitDecryptionRecordKey:
+    kind: Primitive
+    type: Data
+  t:
+    kind: Primitive
+    type: String
+  pv:
+    kind: Primitive
+    type: Integer
+  gv:
+    kind: Primitive
+    type: String
+  CloudKitRecordKey:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  gid:
+    kind: Primitive
+    type: String

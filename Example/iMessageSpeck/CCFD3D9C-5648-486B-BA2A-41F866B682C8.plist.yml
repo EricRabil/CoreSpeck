@@ -1,0 +1,45 @@
+kind: Object
+name: CCFD3D9C-5648-486B-BA2A-41F866B682C8.plist
+metadata:
+  hash: 87833be8f853ff386c35f558f1f17c5e
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/CCFD3D9C-5648-486B-BA2A-41F866B682C8.plist
+children:
+  pv:
+    kind: Primitive
+    type: Integer
+  amk:
+    kind: Primitive
+    type: String
+  amrln:
+    kind: Primitive
+    type: Integer
+  gv:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  amrlc:
+    kind: Primitive
+    type: Integer
+  r:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  amt:
+    kind: Primitive
+    type: Integer
+  msi:
+    kind: Primitive
+    type: Data
+  t:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String

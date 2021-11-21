@@ -1,0 +1,86 @@
+kind: Customization
+name: IMWirePayloadAnnotations
+target:
+  children: |
+    bid:
+      kind: Primitive
+      type: String
+patches:
+  - op: add
+    path: /children/bid/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: ballooonPluginID
+        ericrabil.com/type-group: IMPluginMessage
+      description: The bundle identifier of the balloon plugin responsible for this message.
+  - op: add
+    path: /children/bp/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: balloonPluginPayload
+        ericrabil.com/type-group: IMPluginMessage
+        ericrabil.com/value-nullable: true
+      description: The payload data to pass to the balloon plugin payload responsible for this message.
+  - op: add
+    path: /children/bpdi/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: balloonPluginPayloadInformation
+        ericrabil.com/extracted-type-name: IMPluginMessagePayloadInformation
+        ericrabil.com/type-group: IMPluginMessage
+        ericrabil.com/value-nullable: true
+  - op: add
+    path: /children/bpdi/children/o/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: owner
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+      description: The owner of this payload data
+  - op: add
+    path: /children/bpdi/children/r/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: url
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+      description: The owner of this payload data
+  - op: add
+    path: /children/bpdi/children/s/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: signature
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+      description: The signature provided by the sender to validate the incoming data.
+  - op: add
+    path: /children/bpdi/children/f/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: size
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+      description: The size in bytes of the incoming data.
+  - op: add
+    path: /children/bpdi/children/e/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: decryptionKey
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+      description: The decryption key that will be used to unarchive the incoming data.
+  - op: add
+    path: /children/pluginMessage
+    value:
+      kind: Reference
+      name: pluginMessage
+      aliasedName: IMPluginMessage
+      aliasedKind: Object
+      metadata:
+        annotations:
+          ericrabil.com/type-group: IMMessage
+          ericrabil.com/synthesized-aggregate: IMPluginMessage
+          ericrabil.com/value-nullable: true
+        description: If present, provides the plugin payload.

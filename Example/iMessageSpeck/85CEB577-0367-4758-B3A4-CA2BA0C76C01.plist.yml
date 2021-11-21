@@ -1,0 +1,34 @@
+kind: Object
+name: 85CEB577-0367-4758-B3A4-CA2BA0C76C01.plist
+metadata:
+  hash: 84356d6a6faa6d7b0405bd1ac22caebe
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/85CEB577-0367-4758-B3A4-CA2BA0C76C01.plist
+children:
+  originalCommand:
+    kind: Primitive
+    type: Integer
+  toID:
+    kind: Primitive
+    type: String
+  incomingResponseIdentifier:
+    kind: Primitive
+    type: String
+  serviceIdentifier:
+    kind: Primitive
+    type: String
+  deviceBlackedOut:
+    kind: Primitive
+    type: Boolean
+  originalGUID:
+    kind: Primitive
+    type: String
+  fromID:
+    kind: Primitive
+    type: String
+  fromServerStorage:
+    kind: Primitive
+    type: Boolean
+  wantsManualAck:
+    kind: Primitive
+    type: Boolean

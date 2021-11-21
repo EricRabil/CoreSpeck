@@ -1,0 +1,32 @@
+kind: Object
+name: IMPluginMessage
+children:
+  bp:
+    kind: Primitive
+    type: Data
+    metadata:
+      description: The payload data to pass to the balloon plugin payload responsible
+        for this message.
+      annotations:
+        ericrabil.com/type-group: IMPluginMessage
+        ericrabil.com/readable-name: balloonPluginPayload
+        ericrabil.com/value-nullable: 'true'
+  bid:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The bundle identifier of the balloon plugin responsible for this
+        message.
+      annotations:
+        ericrabil.com/type-group: IMPluginMessage
+        ericrabil.com/readable-name: ballooonPluginID
+  bpdi:
+    kind: Reference
+    name: IMPluginMessagePayloadInformation
+    metadata:
+      annotations:
+        ericrabil.com/type-group: IMPluginMessage
+        ericrabil.com/readable-name: balloonPluginPayloadInformation
+        ericrabil.com/value-nullable: 'true'
+    aliasedName: IMPluginMessagePayloadInformation
+    aliasedKind: Object

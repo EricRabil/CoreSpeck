@@ -1,0 +1,44 @@
+kind: Object
+name: IMPluginMessagePayloadInformation
+children:
+  s:
+    kind: Primitive
+    type: Data
+    metadata:
+      description: The signature provided by the sender to validate the incoming data.
+      annotations:
+        ericrabil.com/readable-name: signature
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+  o:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The owner of this payload data
+      annotations:
+        ericrabil.com/readable-name: owner
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+  r:
+    kind: Primitive
+    type: String
+    metadata:
+      description: The owner of this payload data
+      annotations:
+        ericrabil.com/readable-name: url
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+  e:
+    kind: Primitive
+    type: Data
+    metadata:
+      description: The decryption key that will be used to unarchive the incoming
+        data.
+      annotations:
+        ericrabil.com/readable-name: decryptionKey
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+  f:
+    kind: Primitive
+    type: Integer
+    metadata:
+      description: The size in bytes of the incoming data.
+      annotations:
+        ericrabil.com/type-group: IMPluginMessagePayloadInformation
+        ericrabil.com/readable-name: size

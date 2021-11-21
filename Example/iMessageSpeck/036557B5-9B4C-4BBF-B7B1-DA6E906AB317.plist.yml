@@ -1,0 +1,55 @@
+kind: Object
+name: 036557B5-9B4C-4BBF-B7B1-DA6E906AB317.plist
+metadata:
+  hash: 643786ffe79b940d7665557277e2959f
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/036557B5-9B4C-4BBF-B7B1-DA6E906AB317.plist
+children:
+  gid:
+    kind: Primitive
+    type: String
+  bid:
+    kind: Primitive
+    type: String
+  x:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  v:
+    kind: Primitive
+    type: String
+  bpdi:
+    kind: Object
+    name: bpdi
+    children:
+      f:
+        kind: Primitive
+        type: Integer
+      s:
+        kind: Primitive
+        type: Data
+      r:
+        kind: Primitive
+        type: String
+      e:
+        kind: Primitive
+        type: Data
+      o:
+        kind: Primitive
+        type: String
+  r:
+    kind: Primitive
+    type: String
+  gv:
+    kind: Primitive
+    type: String
+  t:
+    kind: Primitive
+    type: String
+  pv:
+    kind: Primitive
+    type: Integer

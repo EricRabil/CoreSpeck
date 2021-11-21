@@ -1,0 +1,82 @@
+kind: Customization
+name: IMMessageWireAnnotations
+target:
+  children:
+  - |
+    p:
+      kind: Array
+      element:
+        kind: Primitive
+        type: String
+  - |
+    p:
+      kind: Primitive
+      type: String
+patches:
+  - op: append
+    path: /metadata/typeGroups
+    value: IMMessage
+  - op: add
+    path: /children/t/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: textContent
+        ericrabil.com/type-group: IMMessage
+      description: Human-readable message text, can be used as a fallback text or the default if no other message formats are provided.
+  - op: add
+    path: /children/x/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: richContent
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: true
+      description: HTML-based rich text for this message
+  - op: add
+    path: /children/r/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: replyToGUID
+        ericrabil.com/type-group: IMMessage
+      description: The GUID of the message prior to this one
+  - op: add
+    path: /children/tg/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: threadIdentifier
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: true
+      description: When present, this message is in reply to another message.
+  - op: add
+    path: /children/v/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: protocolVersion
+        ericrabil.com/require-constant: "1"
+        ericrabil.com/type-group: IMMessage
+      description: The base protocol version, which should always be 1.
+  - op: add
+    path: /children/p/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: participants
+        ericrabil.com/type-group: IMMessage
+      description: The participants this message has been sent to.
+  - op: add
+    path: /children/msi/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: messageSummaryInfo
+        ericrabil.com/type-group: IMMessage
+        ericrabil.com/value-nullable: true
+      description: A binary property list with additional information about this message.
+---
+kind: TypeGroup
+name: IMMessage
+settings:
+  explicitlyExtends:
+    - IMBaseMessage

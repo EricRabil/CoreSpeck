@@ -1,0 +1,51 @@
+kind: Customization
+name: IMMessageBaseAnnotations
+target:
+  children:
+    - |
+      type:
+        kind: Primitive
+        type: String
+    - |
+      p:
+        kind: Array
+        element:
+          kind: Primitive
+          type: String
+patches:
+  - op: add
+    path: /children/n/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: groupName
+        ericrabil.com/type-group: IMBaseMessage
+        ericrabil.com/value-nullable: true
+      description: The name of this group chat, if set. If it missing, the group is no longer named.
+  - op: add
+    path: /children/gid/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: groupID
+        ericrabil.com/type-group: IMBaseMessage
+      description: The unique identifier of this conversation.
+  - op: add
+    path: /children/pv/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: propertiesVersion
+        ericrabil.com/type-group: IMBaseMessage
+      description: The incrementing number correlated to the chat properties revision history.
+  - op: add
+    path: /children/gv/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: groupVersion
+        ericrabil.com/require-constant: "8"
+        ericrabil.com/type-group: IMBaseMessage
+      description: The group protocol version, which should always be 8.
+---
+kind: TypeGroup
+name: IMBaseMessage
+settings:
+  generationStyle: Abstract

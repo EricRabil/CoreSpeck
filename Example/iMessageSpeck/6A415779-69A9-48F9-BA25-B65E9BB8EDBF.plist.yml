@@ -1,0 +1,62 @@
+kind: Object
+name: 6A415779-69A9-48F9-BA25-B65E9BB8EDBF.plist
+metadata:
+  hash: 613687706d57390aab9abd16ad4b8ecb
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/6A415779-69A9-48F9-BA25-B65E9BB8EDBF.plist
+children:
+  sp:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  tv:
+    kind: Object
+    name: tv
+    children:
+      IMFileTransferCreatedDate:
+        kind: Primitive
+        type: Double
+      IMFileTransferFilenameKey:
+        kind: Primitive
+        type: String
+      IMFileTransferLocalUserInfoKey:
+        kind: Object
+        name: IMFileTransferLocalUserInfoKey
+        children:
+          file-size:
+            kind: Primitive
+            type: String
+          decryption-key:
+            kind: Primitive
+            type: String
+          mmcs-owner:
+            kind: Primitive
+            type: String
+          mmcs-url:
+            kind: Primitive
+            type: String
+          mmcs-signature-hex:
+            kind: Primitive
+            type: String
+          refresh-date:
+            kind: Primitive
+            type: Date
+      IMFileTransferGUID:
+        kind: Primitive
+        type: String
+  pv:
+    kind: Primitive
+    type: Integer
+  type:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  n:
+    kind: Primitive
+    type: String
+  gv:
+    kind: Primitive
+    type: String

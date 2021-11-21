@@ -1,0 +1,43 @@
+kind: Object
+name: 75F733C8-DFB0-464E-B702-7B3D2664CB71.plist
+metadata:
+  hash: c5ceeaeb6c43239bd35f400e0480fa9b
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/75F733C8-DFB0-464E-B702-7B3D2664CB71.plist
+children:
+  type:
+    kind: Primitive
+    type: String
+  pv:
+    kind: Primitive
+    type: Integer
+  n:
+    kind: Primitive
+    type: String
+  tv:
+    kind: Object
+    name: tv
+    children:
+      IMFileTransferFilenameKey:
+        kind: Primitive
+        type: String
+      IMFileTransferGUID:
+        kind: Primitive
+        type: String
+      IMFileTransferUTITypeKey:
+        kind: Primitive
+        type: String
+      IMFileTransferCreatedDate:
+        kind: Primitive
+        type: Double
+  gid:
+    kind: Primitive
+    type: String
+  sp:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  gv:
+    kind: Primitive
+    type: String

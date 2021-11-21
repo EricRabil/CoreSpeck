@@ -1,0 +1,22 @@
+kind: Enumeration
+name: IMMessageAssociationType
+extensible: true
+enumerationKind: Integer
+cases:
+  exclamation: '2004'
+  edit: '1'
+  thumbsUp: '2001'
+  ha: '2003'
+  consumed: '4'
+  deselectedThumbsUp: '3001'
+  deselectedExclamation: '3004'
+  deselectedQuestionMark: '3005'
+  deselectedHa: '3003'
+  unspecified: '0'
+  deselectedHeart: '3000'
+  heart: '2000'
+  thumbsDown: '2002'
+  questionMark: '2005'
+  sticker: '1000'
+  unconsumed: '2'
+  deselectedThumbsDown: '3002'

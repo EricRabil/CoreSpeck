@@ -1,0 +1,8 @@
+kind: Enumeration
+name: IMGroupMessageUpdateType
+extensible: false
+enumerationKind: String
+cases:
+  nameChange: n
+  participantChange: p
+  photoChange: v

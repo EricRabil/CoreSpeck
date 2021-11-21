@@ -1,0 +1,154 @@
+kind: Customization
+name: IMGroupMessageWireAnnotations
+target:
+  children: |
+    type:
+      kind: Primitive
+      type: String
+patches:
+  - op: append
+    path: /metadata/typeGroups
+    value: IMGroupMessage
+  - op: add
+    path: /children/sp/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: senderParticipants
+        ericrabil.com/type-group: IMGroupMessage
+      description: The participants this group change was sent to.
+  - op: add
+    path: /children/tp/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: toParticipants
+        ericrabil.com/type-group: IMGroupMessage
+        ericrabil.com/value-nullable: true
+      description: When present, the group now has the participants within this value.
+  - op: add
+    path: /children/nn/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: newGroupName
+        ericrabil.com/type-group: IMGroupMessage
+        ericrabil.com/value-nullable: true
+      description: When present, the group should now be named this value.
+  - op: add
+    path: /children/tv/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: groupPhotoTransfer
+        ericrabil.com/type-group: IMGroupMessage
+        ericrabil.com/extracted-type-name: IMGroupPhotoTransfer
+        ericrabil.com/value-nullable: true
+      description: A file transfer for the new group photo.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: localUserInfo
+        ericrabil.com/extracted-type-name: IMGroupPhotoTransferUserInfo
+        ericrabil.com/value-nullable: true
+      description: The user info for the photo being transferred.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/mmcs-url/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: url
+      description: The URL at which this transfer can be downloaded.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/file-size/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: fileSize
+      description: The size in bytes of this transfer.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/mmcs-signature-hex/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: signatureHex
+      description: The signature sent by the sender of this transfer.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/refresh-date/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: refreshDate
+      description: The date on which this transfer will need to be refreshed.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/mmcs-owner/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: owner
+      description: The identifier of the sender of this transfer.
+  - op: add
+    path: /children/tv/children/IMFileTransferLocalUserInfoKey/children/decryption-key/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: decryptionKey
+      description: The key to be used when decrypting this transfer.
+  - op: add
+    path: /children/tv/children/IMFileTransferFilenameKey/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: filename
+      description: The name of the group photo being transferred.
+  - op: add
+    path: /children/tv/children/IMFileTransferCreatedDate/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: createdDate
+      description: The time the group photo change was initiated.
+  - op: add
+    path: /children/tv/children/IMFileTransferGUID/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: guid
+      description: The GUID of the file transfer for this group photo.
+  - op: add
+    path: /children/tv/children/IMFileTransferMessageGUID/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: messageGUID
+        ericrabil.com/value-nullable: true
+      description: The GUID of the message changing the group photo.
+  - op: add
+    path: /children/tv/children/IMFileTransferUTITypeKey/metadata
+    missing-behavior: skip
+    value:
+      annotations:
+        ericrabil.com/readable-name: utiType
+        ericrabil.com/value-nullable: true
+      description: The UTI type of the group photo.
+  - op: add
+    path: /children/type/metadata
+    value:
+      annotations:
+        ericrabil.com/readable-name: groupUpdateType
+        ericrabil.com/type-group: IMGroupMessage
+        ericrabil.com/closed-enumeration: |
+          kind: String
+          name: IMGroupMessageUpdateType
+          cases:
+            nameChange: n
+            participantChange: p
+            photoChange: v
+      description: The type of change being made. One of (n,p,v)
+---
+kind: TypeGroup
+name: IMGroupMessage
+settings:
+  explicitlyExtends:
+    - IMBaseMessage

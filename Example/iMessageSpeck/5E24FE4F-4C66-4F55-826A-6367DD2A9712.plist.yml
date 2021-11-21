@@ -1,0 +1,57 @@
+kind: Object
+name: 5E24FE4F-4C66-4F55-826A-6367DD2A9712.plist
+metadata:
+  hash: e9e94274151698009286f119395e8260
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/5E24FE4F-4C66-4F55-826A-6367DD2A9712.plist
+children:
+  gv:
+    kind: Primitive
+    type: String
+  msi:
+    kind: Primitive
+    type: Data
+  amrlc:
+    kind: Primitive
+    type: Integer
+  r:
+    kind: Primitive
+    type: String
+  arc:
+    kind: Primitive
+    type: String
+  amrln:
+    kind: Primitive
+    type: Integer
+  amk:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
+  t:
+    kind: Primitive
+    type: String
+  CloudKitDecryptionRecordKey:
+    kind: Primitive
+    type: Data
+  pRID:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  CloudKitRecordKey:
+    kind: Primitive
+    type: String
+  pv:
+    kind: Primitive
+    type: Integer
+  amt:
+    kind: Primitive
+    type: Integer

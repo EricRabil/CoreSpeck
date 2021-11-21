@@ -1,0 +1,45 @@
+kind: Object
+name: BF8FC3DC-F31C-4449-BB19-7A6EB0AB9AB9.plist
+metadata:
+  hash: 77f5d3ded8838691f1a879852612ad8e
+  annotations:
+    ericrabil.com/xml-import-source: file:///Users/ericrabil/Documents/iMessagePayloads/BF8FC3DC-F31C-4449-BB19-7A6EB0AB9AB9.plist
+children:
+  p:
+    kind: Array
+    element:
+      kind: Primitive
+      type: String
+  t:
+    kind: Primitive
+    type: String
+  gv:
+    kind: Primitive
+    type: String
+  e:
+    kind: Primitive
+    type: Boolean
+  pv:
+    kind: Primitive
+    type: Integer
+  x:
+    kind: Primitive
+    type: String
+  ia-0:
+    kind: Primitive
+    type: Data
+  pRID:
+    kind: Primitive
+    type: String
+  a:
+    kind: Primitive
+    type: Boolean
+  r:
+    kind: Primitive
+    type: String
+  v:
+    kind: Primitive
+    type: String
+  gid:
+    kind: Primitive
+    type: String
