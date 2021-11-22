@@ -11,7 +11,7 @@ Speck has four components:
 
 ## Importing
 
-Speck provides APIs that make it easy to ingest arbitrary data, allowing you to build up your models from live data. This is especially useful for scenarios in which you do not have access to the original documentation, and wish to reconstruct an API model from responses. For your convenience, there is a reference implementation of an importer utilizing these APIs at [XMLImporter](Importers/XMLImporter.swift).
+Speck provides APIs that make it easy to ingest arbitrary data, allowing you to build up your models from live data. This is especially useful for scenarios in which you do not have access to the original documentation, and wish to reconstruct an API model from responses. For your convenience, there is a reference implementation of an importer utilizing these APIs at [XMLImporter](Sources/CoreSpeck/Importers/XMLImporter.swift).
 
 You are encouraged to import as many pieces of data as needed to get good coverage of the API you are documenting. This allows you to have representative types. There are annotations that exist which allow you to specify nullability, as well as make grouped nullability (via synthesized aggregates), in the event you have uneven responses.
 
