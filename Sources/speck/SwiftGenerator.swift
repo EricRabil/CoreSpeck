@@ -122,7 +122,7 @@ extension SwiftGenerator {
             SyntaxFactory.makeEnumDecl(
                 attributes: nil,
                 modifiers: nil,
-                enumKeyword: SyntaxFactory.makeEnumKeyword(leadingTrivia: .zero, trailingTrivia: .spaces(1)),
+                enumKeyword: SyntaxFactory.makeEnumKeyword(leadingTrivia: .garbageText("public "), trailingTrivia: .spaces(1)),
                 identifier: SyntaxFactory.makeIdentifier(type.name),
                 genericParameters: nil,
                 inheritanceClause: SyntaxFactory.makeInheritanceList(fromTypes: [
@@ -213,7 +213,8 @@ extension SwiftGenerator {
                 withName: name,
                 type: spec.swiftType,
                 letOrVar: .var,
-                accessor: typeGroupDefs.settings.generationStyle == .abstract ? PROTOCOL_GET_SET : nil
+                accessor: typeGroupDefs.settings.generationStyle == .abstract ? PROTOCOL_GET_SET : nil,
+                publicToken: typeGroupDefs.settings.generationStyle == .abstract ? nil : "public"
             ).withLeadingTrivia(.tabs(1))
             
             if let description = spec.metadata.description {
@@ -241,7 +242,7 @@ extension SwiftGenerator {
                 SyntaxFactory.makeProtocolDecl(
                     attributes: nil,
                     modifiers: nil,
-                    protocolKeyword: SyntaxFactory.makeProtocolKeyword(leadingTrivia: Trivia.zero, trailingTrivia: Trivia.spaces(1)),
+                    protocolKeyword: SyntaxFactory.makeProtocolKeyword(leadingTrivia: .garbageText("public "), trailingTrivia: Trivia.spaces(1)),
                     identifier: identifier,
                     inheritanceClause: inheritance,
                     genericWhereClause: nil,
@@ -254,7 +255,7 @@ extension SwiftGenerator {
             SyntaxFactory.makeStructDecl(
                 attributes: nil,
                 modifiers: nil,
-                structKeyword: SyntaxFactory.makeStructKeyword(leadingTrivia: Trivia.zero, trailingTrivia: Trivia.spaces(1)),
+                structKeyword: SyntaxFactory.makeStructKeyword(leadingTrivia: .garbageText("public "), trailingTrivia: Trivia.spaces(1)),
                 identifier: identifier,
                 genericParameterClause: nil,
                 inheritanceClause: inheritance,

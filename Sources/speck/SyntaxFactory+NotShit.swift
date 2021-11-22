@@ -71,10 +71,14 @@ extension SyntaxFactory {
         )
     }
     
-    static func makeVariableDeclaration(withName name: String, type: TypeSyntax?, letOrVar: LetOrVar?, accessor: Syntax?, initializer: InitializerClauseSyntax? = nil) -> VariableDeclSyntax {
+    static func makeVariableDeclaration(withName name: String, type: TypeSyntax?, letOrVar: LetOrVar?, accessor: Syntax?, initializer: InitializerClauseSyntax? = nil, publicToken: String? = nil) -> VariableDeclSyntax {
         SyntaxFactory.makeVariableDecl(
             attributes: nil,
-            modifiers: nil,
+            modifiers: publicToken.map { publicToken in
+                SyntaxFactory.makeModifierList([
+                    SyntaxFactory.makeDeclModifier(name: SyntaxFactory.makeUnknown(publicToken), detailLeftParen: nil, detail: nil, detailRightParen: nil).withTrailingTrivia(.spaces(1))
+                ])
+            },
             letOrVarKeyword: letOrVar?.make() ?? SyntaxFactory.makeUnknown(""),
             bindings: SyntaxFactory.makePatternBindingList([
                 SyntaxFactory.makePatternBinding (
