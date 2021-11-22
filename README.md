@@ -19,7 +19,7 @@ An example of why you can never over-import is the iMessage protocol – it use
 
 ### SpecBuilder
 
-The import system is powered by [SpecBuilder](Importers/Builder/SpecBuilder.swift), an interface that allows you to construct a tree of data as you process the corresponding raw data.
+The import system is powered by [SpecBuilder](Sources/CoreSpeck/Importers/Builder/SpecBuilder.swift), an interface that allows you to construct a tree of data as you process the corresponding raw data.
 
 ```swift
 /// SpecBuilders are an abstraction for scaffolding out a specification while parsing arbitrary data. There is a reference implementation of an XML importer that demonstrates how this can be used.
