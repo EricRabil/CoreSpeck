@@ -10,8 +10,12 @@ import SwiftSyntax
 import _InternalSwiftSyntaxParser
 
 extension SyntaxFactory {
-    static func makeInheritanceList(fromLiterals strings: [String]) -> TypeInheritanceClauseSyntax {
-        makeInheritanceList(fromTypes: strings.map {
+    static func makeInheritanceList(fromLiterals strings: [String]) -> TypeInheritanceClauseSyntax? {
+        if strings.count == 0 {
+            return nil
+        }
+        
+        return makeInheritanceList(fromTypes: strings.map {
             SyntaxFactory.makeTypeIdentifier($0)
         })
     }

@@ -127,7 +127,9 @@ extension SwiftGenerator {
                 genericParameters: nil,
                 inheritanceClause: SyntaxFactory.makeInheritanceList(fromTypes: [
                     SpecPrimitive(kind: type.enumerationKind).swiftType,
-                    SyntaxFactory.makeTypeIdentifier("Codable")
+                    SyntaxFactory.makeTypeIdentifier("Codable"),
+                    SyntaxFactory.makeTypeIdentifier("Equatable"),
+                    SyntaxFactory.makeTypeIdentifier("Hashable")
                 ]).withTrailingTrivia(.spaces(1)),
                 genericWhereClause: nil,
                 members: SyntaxFactory.makeMemberDeclBlock(
@@ -196,9 +198,11 @@ extension SwiftGenerator {
         let typeGroupDefs = (SpecificationRegistry.shared.query(kind: .typeGroup, name: node.name) as? TypeGroup) ?? TypeGroup(name: node.name)
         
         var identifier = SyntaxFactory.makeIdentifier(node.name, leadingTrivia: .zero, trailingTrivia: .zero)
-        let inheritance = typeGroupDefs.settings.explicitlyExtends.isEmpty ? nil : (
-            SyntaxFactory.makeInheritanceList(fromLiterals: typeGroupDefs.settings.explicitlyExtends).withTrailingTrivia(.spaces(1))
-        )
+        var inheritance = SyntaxFactory.makeInheritanceList(
+            fromLiterals: (
+                typeGroupDefs.settings.generationStyle == .concrete ? ["Hashable", "Equatable"] : []
+            ) + typeGroupDefs.settings.explicitlyExtends
+         )?.withTrailingTrivia(.spaces(1))
         
         if inheritance == nil {
             identifier = identifier.withTrailingTrivia(.spaces(1))

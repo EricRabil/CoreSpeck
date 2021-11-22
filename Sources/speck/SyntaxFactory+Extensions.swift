@@ -84,7 +84,7 @@ extension SyntaxFactory {
                 modifiers: nil,
                 extensionKeyword: SyntaxFactory.makeExtensionKeyword().withTrailingTrivia(.spaces(1)),
                 extendedType: SyntaxFactory.makeTypeIdentifier(type),
-                inheritanceClause: inheritances.map(SyntaxFactory.makeInheritanceList(fromLiterals:)),
+                inheritanceClause: inheritances.flatMap(SyntaxFactory.makeInheritanceList(fromLiterals:)),
                 genericWhereClause: nil,
                 members: SyntaxFactory.makeMemberDeclBlock(
                     leftBrace: SyntaxFactory.makeLeftBraceToken().withLeadingTrivia(.spaces(1)).withTrailingTrivia(.newlines(1)),
